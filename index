@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Verano con Sebastián 🚀</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>☀️ Verano de aprendizaje de Sebastián</h1>
+<p>Preparando 6º de Primaria 🚀</p>
+
+<div id="progreso">
+Progreso:
+<span id="puntos">0</span> puntos
+</div>
+
+</header>
+
+
+<main id="app"></main>
+
+
+<script>
+
+let puntos = 0;
+
+fetch("tareas.json")
+.then(res => res.json())
+.then(data => {
+
+const app=document.getElementById("app");
+
+
+data.asignaturas.forEach(asignatura=>{
+
+
+let bloque=document.createElement("section");
+
+
+bloque.innerHTML=`
+
+<h2>${asignatura.icono} ${asignatura.nombre}</h2>
+
+<h3>🧠 Pregunta rápida</h3>
+
+<p>${asignatura.pregunta}</p>
+
+<button onclick="resolver(this,'${asignatura.respuesta}')">
+Responder
+</button>
+
+
+<h3>📚 Tarea offline</h3>
+
+<p>${asignatura.tarea}</p>
+
+
+<h3>🚀 Mini proyecto</h3>
+
+<p>${asignatura.proyecto}</p>
+
+
+<hr>
+
+`;
+
+app.appendChild(bloque);
+
+
+});
+
+
+});
+
+
+function resolver(btn,respuesta){
+
+let contestacion=prompt("Escribe tu respuesta:");
+
+if(contestacion &&
+contestacion.toLowerCase().includes(respuesta.toLowerCase())){
+
+alert("¡Correcto! +10 puntos 🎉");
+
+puntos+=10;
+
+document.getElementById("puntos").innerHTML=puntos;
+
+
+}else{
+
+alert("Casi... revisa la respuesta y vuelve a intentarlo 🙂");
+
+}
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
