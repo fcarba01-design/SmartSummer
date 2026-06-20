@@ -26,7 +26,8 @@ Progreso:
 
 <script>
 
-let puntos = 0;
+let puntos = Number(localStorage.getItem("puntosSebastian")) || 0;
+document.getElementById("puntos").innerHTML = puntos;
 
 fetch("tareas.json")
 .then(res => res.json())
@@ -89,6 +90,8 @@ alert("¡Correcto! +10 puntos 🎉");
 puntos+=10;
 
 document.getElementById("puntos").innerHTML=puntos;
+
+localStorage.setItem("puntosSebastian", puntos);
 
 
 }else{
