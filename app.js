@@ -1,0 +1,208 @@
+{
+
+"asignaturas":[
+
+
+{
+
+"nombre":"Natural Science",
+"icono":"🔬",
+
+"pregunta":
+"What organ pumps blood through the body?",
+
+"respuesta":
+"heart",
+
+"tarea":
+"Lee sobre el sistema solar y escribe 5 datos interesantes.",
+
+"proyecto":
+"Crea una maqueta del sistema solar usando materiales reciclados."
+
+},
+
+
+{
+
+"nombre":"Ciencias Sociales",
+"icono":"🌍",
+
+"pregunta":
+"¿Cuál es la capital de España?",
+
+"respuesta":
+"madrid",
+
+"tarea":
+"Investiga una comunidad autónoma y escribe sus características.",
+
+"proyecto":
+"Crea un mapa turístico de una ciudad española."
+
+},
+
+
+{
+
+"nombre":"Lengua castellana y literatura",
+"icono":"📖",
+
+"pregunta":
+"¿Qué es un sustantivo?",
+
+"respuesta":
+"nombre",
+
+"tarea":
+"Lee un libro durante el verano y escribe un pequeño resumen.",
+
+"proyecto":
+"Crea un diario de lectura con dibujos."
+
+},
+
+
+{
+
+"nombre":"Matemáticas ABN",
+"icono":"➗",
+
+"pregunta":
+"¿Cuánto es 25 x 4?",
+
+"respuesta":
+"100",
+
+"tarea":
+"Resuelve 10 problemas de compras, descuentos y medidas.",
+
+"proyecto":
+"Crea un presupuesto para organizar un viaje familiar."
+
+},
+
+
+{
+
+"nombre":"Lengua Inglesa",
+"icono":"🇬🇧",
+
+"pregunta":
+"Translate: perro",
+
+"respuesta":
+"dog",
+
+"tarea":
+"Escucha canciones en inglés y apunta palabras nuevas.",
+
+"proyecto":
+"Crea un póster en inglés sobre tus vacaciones."
+
+},
+
+
+{
+
+"nombre":"Music",
+"icono":"🎵",
+
+"pregunta":
+"How many notes are there in the musical scale?",
+
+"respuesta":
+"seven",
+
+"tarea":
+"Escucha tres canciones y escribe qué instrumentos aparecen.",
+
+"proyecto":
+"Crea una pequeña composición musical."
+
+},
+
+
+{
+
+"nombre":"Art and Crafts",
+"icono":"🎨",
+
+"pregunta":
+"¿Qué colores forman el verde?",
+
+"respuesta":
+"azul",
+
+"tarea":
+"Realiza dibujos usando diferentes técnicas.",
+
+"proyecto":
+"Crea una portada artística para tu cuaderno de 6º."
+
+},
+
+
+{
+
+"nombre":"Educación Física",
+"icono":"⚽",
+
+"pregunta":
+"¿Por qué es importante calentar antes del deporte?",
+
+"respuesta":
+"lesiones",
+
+"tarea":
+"Haz actividad física 30 minutos al día y registra tus avances.",
+
+"proyecto":
+"Crea tu propio plan de entrenamiento semanal."
+
+},
+
+
+{
+
+"nombre":"Tecnología y Robótica",
+"icono":"🤖",
+
+"pregunta":
+"¿Qué significa CPU?",
+
+"respuesta":
+"procesador",
+
+"tarea":
+"Investiga cómo funciona un robot sencillo.",
+
+"proyecto":
+"Diseña en papel tu propio robot."
+
+},
+
+
+{
+
+"nombre":"Religión Católica",
+"icono":"✝️",
+
+"pregunta":
+"¿Qué libro recoge la vida de Jesús?",
+
+"respuesta":
+"biblia",
+
+"tarea":
+"Lee una parábola y escribe qué enseñanza transmite.",
+
+"proyecto":
+"Crea una presentación sobre valores importantes."
+
+}
+
+
+]
+
+}
