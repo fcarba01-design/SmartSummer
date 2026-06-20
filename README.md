@@ -1,0 +1,2 @@
+# SmartSummer
+Actividades de Verano
