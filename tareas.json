@@ -1,218 +1,314 @@
 {
-
-"asignaturas":[
-
-
-{
-
-"id":"natural-science",
-"nombre":"Natural Science",
-"icono":"🔬",
-
-"pregunta":
-"What organ pumps blood through the body?",
-
-"respuesta":
-"heart",
-
-"tarea":
-"Lee sobre el sistema solar y escribe 5 datos interesantes.",
-
-"proyecto":
-"Crea una maqueta del sistema solar usando materiales reciclados."
-
-},
-
-
-{
-
-"id":"ciencias-sociales",
-"nombre":"Ciencias Sociales",
-"icono":"🌍",
-
-"pregunta":
-"¿Cuál es la capital de España?",
-
-"respuesta":
-"madrid",
-
-"tarea":
-"Investiga una comunidad autónoma y escribe sus características.",
-
-"proyecto":
-"Crea un mapa turístico de una ciudad española."
-
-},
-
-
-{
-
-"id":"lengua-castellana",
-"nombre":"Lengua castellana y literatura",
-"icono":"📖",
-
-"pregunta":
-"¿Qué es un sustantivo?",
-
-"respuesta":
-"nombre",
-
-"tarea":
-"Lee un libro durante el verano y escribe un pequeño resumen.",
-
-"proyecto":
-"Crea un diario de lectura con dibujos."
-
-},
-
-
-{
-
-"id":"matematicas-abn",
-"nombre":"Matemáticas ABN",
-"icono":"➗",
-
-"pregunta":
-"¿Cuánto es 25 x 4?",
-
-"respuesta":
-"100",
-
-"tarea":
-"Resuelve 10 problemas de compras, descuentos y medidas.",
-
-"proyecto":
-"Crea un presupuesto para organizar un viaje familiar."
-
-},
-
-
-{
-
-"id":"lengua-inglesa",
-"nombre":"Lengua Inglesa",
-"icono":"🇬🇧",
-
-"pregunta":
-"Translate: perro",
-
-"respuesta":
-"dog",
-
-"tarea":
-"Escucha canciones en inglés y apunta palabras nuevas.",
-
-"proyecto":
-"Crea un póster en inglés sobre tus vacaciones."
-
-},
-
-
-{
-
-"id":"music",
-"nombre":"Music",
-"icono":"🎵",
-
-"pregunta":
-"How many notes are there in the musical scale?",
-
-"respuesta":
-"seven",
-
-"tarea":
-"Escucha tres canciones y escribe qué instrumentos aparecen.",
-
-"proyecto":
-"Crea una pequeña composición musical."
-
-},
-
-
-{
-
-"id":"art-and-crafts",
-"nombre":"Art and Crafts",
-"icono":"🎨",
-
-"pregunta":
-"¿Qué colores forman el verde?",
-
-"respuesta":
-"azul y amarillo",
-
-"tarea":
-"Realiza dibujos usando diferentes técnicas.",
-
-"proyecto":
-"Crea una portada artística para tu cuaderno de 6º."
-
-},
-
-
-{
-
-"id":"educacion-fisica",
-"nombre":"Educación Física",
-"icono":"⚽",
-
-"pregunta":
-"¿Por qué es importante calentar antes del deporte?",
-
-"respuesta":
-"lesiones",
-
-"tarea":
-"Haz actividad física 30 minutos al día y registra tus avances.",
-
-"proyecto":
-"Crea tu propio plan de entrenamiento semanal."
-
-},
-
-
-{
-
-"id":"tecnologia-robotica",
-"nombre":"Tecnología y Robótica",
-"icono":"🤖",
-
-"pregunta":
-"¿Qué significa CPU?",
-
-"respuesta":
-"procesador",
-
-"tarea":
-"Investiga cómo funciona un robot sencillo.",
-
-"proyecto":
-"Diseña en papel tu propio robot."
-
-},
-
-
-{
-
-"id":"religion-catolica",
-"nombre":"Religión Católica",
-"icono":"✝️",
-
-"pregunta":
-"¿Qué libro recoge la vida de Jesús?",
-
-"respuesta":
-"biblia",
-
-"tarea":
-"Lee una parábola y escribe qué enseñanza transmite.",
-
-"proyecto":
-"Crea una presentación sobre valores importantes."
-
-}
-
-
-]
-
+  "dias": [
+    {
+      "id": "dia-01",
+      "numero": 1,
+      "titulo": "Día 1: El Corazón y el Espacio",
+      "fases": {
+        "lectura": {
+          "duracion": 15,
+          "titulo": "Lectura de Verano - Sesión 1",
+          "descripcion": "Lee un libro de tu elección durante 15 minutos y anota los personajes principales."
+        },
+        "estudio": {
+          "duracion": 30,
+          "titulo": "Natural Science — El Aparato Circulatorio",
+          "descripcion": "Estudia cómo funciona el transporte de sangre. Pregunta clave: What organ pumps blood through the body?",
+          "pregunta": "What organ pumps blood through the body?",
+          "respuesta": "heart"
+        },
+        "practica": {
+          "duracion": 30,
+          "titulo": "Matemáticas ABN — Multiplicación Rápida",
+          "descripcion": "Resuelve operaciones de cálculo mental con rejilla en tu cuaderno. Pregunta clave: ¿Cuánto es 25 x 4?",
+          "pregunta": "¿Cuánto es 25 x 4?",
+          "respuesta": "100"
+        },
+        "proyecto": {
+          "duracion": 15,
+          "titulo": "Natural Science — Maqueta del Sistema Solar",
+          "descripcion": "Dedica 15 minutos a buscar y clasificar materiales reciclados (tapones, cartón) para tu maqueta espacial."
+        }
+      }
+    },
+    {
+      "id": "dia-02",
+      "numero": 2,
+      "titulo": "Día 2: Geografía de España y Palabras",
+      "fases": {
+        "lectura": {
+          "duracion": 15,
+          "titulo": "Lectura de Verano - Sesión 2",
+          "descripcion": "Lee tu libro durante 15 minutos y escribe un pequeño resumen en tu cuaderno sobre lo que ha pasado."
+        },
+        "estudio": {
+          "duracion": 30,
+          "titulo": "Ciencias Sociales — Organización Territorial",
+          "descripcion": "Repasa el mapa político de España y sus comunidades autónomas. Pregunta clave: ¿Cuál es la capital de España?",
+          "pregunta": "¿Cuál es la capital de España?",
+          "respuesta": "madrid"
+        },
+        "practica": {
+          "duracion": 30,
+          "titulo": "Lengua Castellana — Los Sustantivos",
+          "descripcion": "Identifica los sustantivos en un texto de tu libro. Pregunta clave: ¿Qué es un sustantivo?",
+          "pregunta": "¿Qué es un sustantivo?",
+          "respuesta": "nombre"
+        },
+        "proyecto": {
+          "duracion": 15,
+          "titulo": "Ciencias Sociales — Mapa Turístico Creativo",
+          "descripcion": "Elige una ciudad española y empieza a dibujar las calles principales y monumentos en un folio limpio."
+        }
+      }
+    },
+    {
+      "id": "dia-03",
+      "numero": 3,
+      "titulo": "Día 3: Idiomas y Vocabulario Canino",
+      "fases": {
+        "lectura": {
+          "duracion": 15,
+          "titulo": "Lectura de Verano - Sesión 3",
+          "descripcion": "Lee tu libro durante 15 minutos. Busca 3 palabras que te gusten y escríbelas en grande."
+        },
+        "estudio": {
+          "duracion": 30,
+          "titulo": "Lengua Inglesa — Vocabulary & Animals",
+          "descripcion": "Repasa el vocabulario básico de los animales domésticos y su traducción. Pregunta clave: Translate: perro",
+          "pregunta": "Translate: perro",
+          "respuesta": "dog"
+        },
+        "practica": {
+          "duracion": 30,
+          "titulo": "Natural Science — El Universo",
+          "descripcion": "Lee en un libro o enciclopedia sobre el sistema solar y escribe en tu cuaderno 5 datos interesantes que te llamen la atención.",
+          "pregunta": "¿Cuántos datos interesantes debes escribir?",
+          "respuesta": "5"
+        },
+        "proyecto": {
+          "duracion": 15,
+          "titulo": "Lengua Inglesa — Póster de Vacaciones",
+          "descripcion": "Planifica en inglés los apartados de tu póster vacacional (My Summer, Family, Places, Activities)."
+        }
+      }
+    },
+    {
+      "id": "dia-04",
+      "numero": 4,
+      "titulo": "Día 4: Música y Escalas",
+      "fases": {
+        "lectura": {
+          "duracion": 15,
+          "titulo": "Lectura de Verano - Sesión 4",
+          "descripcion": "Lee tu libro durante 15 minutos y dibuja al protagonista tal y como te lo imaginas."
+        },
+        "estudio": {
+          "duracion": 30,
+          "titulo": "Music — Lenguaje Musical",
+          "descripcion": "Aprende el nombre y orden de las notas musicales en el pentagrama. Pregunta clave: How many notes are there in the musical scale?",
+          "pregunta": "How many notes are there in the musical scale?",
+          "respuesta": "seven"
+        },
+        "practica": {
+          "duracion": 30,
+          "titulo": "Ciencias Sociales — Investigación Autonómica",
+          "descripcion": "Investiga una comunidad autónoma de España a tu elección y escribe sus características principales en tu cuaderno.",
+          "pregunta": "¿Qué debes investigar hoy?",
+          "respuesta": "comunidad autonoma"
+        },
+        "proyecto": {
+          "duracion": 15,
+          "titulo": "Music — Mi Primera Composición",
+          "descripcion": "Dibuja un pentagrama en tu cuaderno y empieza a colocar las primeras notas creando un ritmo sencillo."
+        }
+      }
+    },
+    {
+      "id": "dia-05",
+      "numero": 5,
+      "titulo": "Día 5: Mezcla de Colores y Arte",
+      "fases": {
+        "lectura": {
+          "duracion": 15,
+          "titulo": "Lectura de Verano - Sesión 5",
+          "descripcion": "Lee durante 15 minutos en un lugar cómodo y silencioso de la casa."
+        },
+        "estudio": {
+          "duracion": 30,
+          "titulo": "Art and Crafts — Teoría del Color",
+          "descripcion": "Aprende sobre los colores primarios y secundarios y cómo se combinan. Pregunta clave: ¿Qué colores forman el verde? (Menciona uno de ellos)",
+          "pregunta": "¿Qué colores forman el verde?",
+          "respuesta": "azul"
+        },
+        "practica": {
+          "duracion": 30,
+          "titulo": "Lengua Castellana — Diario de Lectura",
+          "descripcion": "Escribe una pequeña ficha con el título del libro que estás leyendo, el autor y haz un dibujo de la portada.",
+          "pregunta": "¿Qué estás creando hoy?",
+          "respuesta": "diario de lectura"
+        },
+        "proyecto": {
+          "duracion": 15,
+          "titulo": "Art and Crafts — Cuaderno de 6º",
+          "descripcion": "Empieza a dibujar las letras decoradas para la portada artística de tu futuro cuaderno de 6º de Primaria."
+        }
+      }
+    },
+    {
+      "id": "dia-06",
+      "numero": 6,
+      "titulo": "Día 6: Deporte y Salud",
+      "fases": {
+        "lectura": {
+          "duracion": 15,
+          "titulo": "Lectura de Verano - Sesión 6",
+          "descripcion": "Lee tu libro durante 15 minutos e intenta cambiarle el final a la historia mentalmente."
+        },
+        "estudio": {
+          "duracion": 30,
+          "titulo": "Educación Física — El Calentamiento",
+          "descripcion": "Aprende la importancia de preparar las articulaciones antes de hacer ejercicio. Pregunta clave: ¿Por qué es importante calentar antes del deporte?",
+          "pregunta": "¿Por qué es importante calentar antes del deporte?",
+          "respuesta": "lesiones"
+        },
+        "practica": {
+          "duracion": 30,
+          "titulo": "Matemáticas ABN — Problemas de la Vida Real",
+          "descripcion": "Resuelve problemas prácticos planteados en tu cuaderno sobre compras en el supermercado, descuentos y medidas de peso.",
+          "pregunta": "¿Sobre qué tratan los problemas matemáticos de hoy?",
+          "respuesta": "compras"
+        },
+        "proyecto": {
+          "duracion": 15,
+          "titulo": "Educación Física — Plan de Entrenamiento",
+          "descripcion": "Diseña una tabla en una hoja para registrar tus 30 minutos diarios de actividad física de esta semana."
+        }
+      }
+    },
+    {
+      "id": "dia-07",
+      "numero": 7,
+      "titulo": "Día 7: Robótica y Tecnología",
+      "fases": {
+        "lectura": {
+          "duracion": 15,
+          "titulo": "Lectura de Verano - Sesión 7",
+          "descripcion": "Lee tu libro durante 15 minutos y busca dos adjetivos que describan la escena actual."
+        },
+        "estudio": {
+          "duracion": 30,
+          "titulo": "Tecnología y Robótica — Componentes del PC",
+          "descripcion": "Aprende los elementos fundamentales de un ordenador y un sistema electrónico. Pregunta clave: ¿Qué significa CPU?",
+          "pregunta": "¿Qué significa CPU?",
+          "respuesta": "procesador"
+        },
+        "practica": {
+          "duracion": 30,
+          "titulo": "Lengua Inglesa — Summer Songs",
+          "descripcion": "Escucha una canción infantil o educativa en inglés, intenta seguir la letra y apunta en un papel las palabras nuevas.",
+          "pregunta": "¿En qué idioma escuchas la canción?",
+          "respuesta": "ingles"
+        },
+        "proyecto": {
+          "duracion": 15,
+          "titulo": "Tecnología y Robótica — El Robot de Papel",
+          "descripcion": "Dibuja en un folio un boceto detallado de un robot inventado por ti, indicando dónde tiene los sensores."
+        }
+      }
+    },
+    {
+      "id": "dia-08",
+      "numero": 8,
+      "titulo": "Día 8: Historia y Valores",
+      "fases": {
+        "lectura": {
+          "duracion": 15,
+          "titulo": "Lectura de Verano - Sesión 8",
+          "descripcion": "Lee tu libro durante 15 minutos y cuenta en voz alta lo que ha pasado al primer familiar que veas."
+        },
+        "estudio": {
+          "duracion": 30,
+          "titulo": "Religión Católica — Documentos Históricos",
+          "descripcion": "Conoce los libros que narran relatos históricos y enseñanzas tradicionales sobre Jesús. Pregunta clave: ¿Qué libro recoge la vida de Jesús?",
+          "pregunta": "¿Qué libro recoge la vida de Jesús?",
+          "respuesta": "biblia"
+        },
+        "practica": {
+          "duracion": 30,
+          "titulo": "Music — Reconocimiento Instrumental",
+          "descripcion": "Escucha atentamente tres piezas musicales o canciones que te gusten y anota en tu cuaderno qué instrumentos identificas.",
+          "pregunta": "¿Cuántas canciones debes escuchar?",
+          "respuesta": "tres"
+        },
+        "proyecto": {
+          "duracion": 15,
+          "titulo": "Religión Católica — Mural de Valores",
+          "descripcion": "Escribe en grande en una cartulina o folio los 5 valores humanos más importantes para convivir en familia."
+        }
+      }
+    },
+    {
+      "id": "dia-09",
+      "numero": 9,
+      "titulo": "Día 9: Presupuesto y Finanzas Familiares",
+      "fases": {
+        "lectura": {
+          "duracion": 15,
+          "titulo": "Lectura de Verano - Sesión 9",
+          "descripcion": "Lee tu libro durante 15 minutos. ¡Ya casi completas tu primera semana y media de hábitos!"
+        },
+        "estudio": {
+          "duracion": 30,
+          "titulo": "Matemáticas ABN — Economía Doméstica",
+          "descripcion": "Aprende cómo se organiza el dinero en un viaje o en los gastos mensuales de una casa.",
+          "pregunta": "¿Qué tipo de presupuesto vas a diseñar en tu proyecto?",
+          "respuesta": "viaje familiar"
+        },
+        "practica": {
+          "duracion": 30,
+          "titulo": "Art and Crafts — Técnicas de Dibujo",
+          "descripcion": "Realiza un dibujo libre utilizando técnicas de sombreado con lápiz o combinación de rotuladores.",
+          "pregunta": "¿Qué estás practicando hoy?",
+          "respuesta": "dibujo"
+        },
+        "proyecto": {
+          "duracion": 15,
+          "titulo": "Matemáticas ABN — Presupuesto de Viaje",
+          "descripcion": "Empieza a escribir una lista de gastos simulados para organizar un viaje familiar (gasolina, comida, entradas)."
+        }
+      }
+    },
+    {
+      "id": "dia-10",
+      "numero": 10,
+      "titulo": "Día 10: Robots e Investigación Final",
+      "fases": {
+        "lectura": {
+          "duracion": 15,
+          "titulo": "Lectura de Verano - Sesión Final",
+          "descripcion": "Dedica los últimos 15 minutos a finalizar el capítulo o escribir una conclusión sobre tu experiencia lectora."
+        },
+        "estudio": {
+          "duracion": 30,
+          "titulo": "Tecnología — Mecánica Robotizada",
+          "descripcion": "Investiga y lee sobre cómo funciona un robot sencillo, sus motores y su fuente de energía.",
+          "pregunta": "¿Cómo funciona un robot?",
+          "respuesta": "sencillo"
+        },
+        "practica": {
+          "duracion": 30,
+          "titulo": "Religión Católica — Comprensión de Parábolas",
+          "descripcion": "Lee una parábola corta o historia moral clásica y escribe en tu cuaderno qué gran enseñanza te transmite para tu día a día.",
+          "pregunta": "¿Qué debes escribir tras leer la parábola?",
+          "respuesta": "enseñanza"
+        },
+        "proyecto": {
+          "duracion": 15,
+          "titulo": "Misión Cumplida — Revisión General",
+          "descripcion": "Reúne todo el trabajo hecho en tu cuaderno de estos 10 días y prepáralo para la gran revisión final con tus padres."
+        }
+      }
+    }
+  ]
 }

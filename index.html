@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Verano con Sebastián 🚀</title>
+<title>Verano con Sebastián 🚀 — Plan de 90 Minutos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -22,6 +22,8 @@
     --violet-dim: rgba(124, 92, 255, 0.15);
     --amber: #FFB020;
     --amber-dim: rgba(255, 176, 32, 0.15);
+    --green: #27ae60;
+    --green-dim: rgba(39, 174, 96, 0.15);
     --text: #E8ECF4;
     --text-muted: rgba(232, 236, 244, 0.45);
     --text-dim: rgba(232, 236, 244, 0.22);
@@ -37,7 +39,6 @@
     overflow-x: hidden;
   }
 
-  /* Grid background lines */
   body::before {
     content: '';
     position: fixed;
@@ -50,7 +51,6 @@
     z-index: 0;
   }
 
-  /* Scan line animation */
   @keyframes scanline {
     0% { transform: translateY(-100%); }
     100% { transform: translateY(100vh); }
@@ -67,7 +67,6 @@
     z-index: 0;
   }
 
-  /* ===== HEADER ===== */
   header {
     position: relative;
     z-index: 1;
@@ -105,9 +104,7 @@
     color: var(--text);
   }
 
-  h1 span {
-    color: var(--cyan);
-  }
+  h1 span { color: var(--cyan); }
 
   .header-sub {
     font-family: var(--mono);
@@ -117,7 +114,6 @@
     letter-spacing: 0.05em;
   }
 
-  /* ===== CORE RING ===== */
   .ring-wrap {
     grid-column: 2;
     grid-row: 1 / 3;
@@ -183,7 +179,6 @@
     margin-top: 3px;
   }
 
-  /* ===== STAT BAR ===== */
   .stat-bar {
     grid-column: 1;
     grid-row: 2;
@@ -206,8 +201,8 @@
   }
 
   .stat-value.amber { color: var(--amber); }
-  .stat-value.violet { color: var(--violet); }
   .stat-value.cyan { color: var(--cyan); }
+  .stat-value.violet { color: var(--violet); }
 
   .stat-label {
     font-family: var(--mono);
@@ -223,19 +218,29 @@
     align-self: stretch;
   }
 
-  /* ===== MAIN GRID ===== */
   main {
     position: relative;
     z-index: 1;
     padding: 32px 24px;
     max-width: 1100px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
   }
 
-  /* ===== MODULE CARD ===== */
+  #dia-cabecera-titulo {
+    font-size: 22px;
+    color: var(--cyan);
+    margin-bottom: 24px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .grid-bloques {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
   .module {
     background: var(--surface);
     border: 1px solid var(--border-dim);
@@ -243,7 +248,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     transition: border-color 0.3s, background 0.3s;
     position: relative;
     overflow: hidden;
@@ -264,20 +269,18 @@
     background: var(--surface-2);
   }
 
-  .module:hover::before {
-    opacity: 0.5;
-  }
+  .module:hover::before { opacity: 0.5; }
 
   .module.completado {
-    border-color: rgba(0,229,255,0.25);
-    background: rgba(0,229,255,0.04);
+    border-color: rgba(39, 174, 96, 0.3);
+    background: rgba(39, 174, 96, 0.04);
   }
 
   .module.completado::before {
+    background: linear-gradient(90deg, transparent, var(--green), transparent);
     opacity: 1;
   }
 
-  /* Module header */
   .module-head {
     display: flex;
     align-items: flex-start;
@@ -299,13 +302,11 @@
   }
 
   .module.completado .module-icon-wrap {
-    background: var(--cyan-dim);
-    border-color: rgba(0,229,255,0.3);
+    background: var(--green-dim);
+    border-color: rgba(39, 174, 96, 0.3);
   }
 
-  .module-title-group {
-    flex: 1;
-  }
+  .module-title-group { flex: 1; }
 
   .module-id {
     font-family: var(--mono);
@@ -340,18 +341,17 @@
   }
 
   .status-done {
-    background: var(--cyan-dim);
-    color: var(--cyan);
-    border: 1px solid rgba(0,229,255,0.3);
+    background: var(--green-dim);
+    color: var(--green);
+    border: 1px solid rgba(39, 174, 96, 0.3);
   }
 
-  /* Progress bar thin HUD line */
   .module-progress-bar {
     height: 2px;
     background: var(--border-dim);
     border-radius: 1px;
     overflow: hidden;
-    margin: -8px 0;
+    margin: -4px 0;
   }
 
   .module-progress-fill {
@@ -360,14 +360,11 @@
     border-radius: 1px;
     width: 0%;
     transition: width 1s cubic-bezier(0.4,0,0.2,1);
-    box-shadow: 0 0 6px rgba(0,229,255,0.8);
   }
 
-  /* Sections inside card */
-  .module-section {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  .module.completado .module-progress-fill {
+    background: var(--green);
+    box-shadow: 0 0 6px rgba(39, 174, 96, 0.8);
   }
 
   .section-label {
@@ -379,6 +376,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
+    margin-bottom: 4px;
   }
 
   .section-label::after {
@@ -388,16 +386,12 @@
     background: var(--border-dim);
   }
 
-  .section-label.violet { color: var(--violet); }
-  .section-label.amber { color: var(--amber); }
-
   .section-text {
     font-size: 13px;
     color: var(--text-muted);
     line-height: 1.55;
   }
 
-  /* ===== ACTION BUTTON ===== */
   .btn-responder {
     display: flex;
     align-items: center;
@@ -424,30 +418,69 @@
     transform: translateY(-1px);
   }
 
-  .btn-responder:active:not(:disabled) {
-    transform: translateY(0);
-  }
-
   .btn-responder:disabled {
-    border-color: rgba(0,229,255,0.25);
-    background: var(--cyan-dim);
-    color: var(--cyan);
+    border-color: rgba(39, 174, 96, 0.25);
+    background: var(--green-dim);
+    color: var(--green);
     cursor: default;
   }
 
-  /* ===== COUNTER ANIMATION ===== */
-  @keyframes countUp {
-    from { opacity: 0.5; transform: translateY(4px); }
-    to { opacity: 1; transform: translateY(0); }
+  .panel-padres {
+    background: rgba(124, 92, 255, 0.03);
+    border: 1px solid rgba(124, 92, 255, 0.2);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 32px;
   }
 
-  .animating {
-    animation: countUp 0.3s ease;
+  .panel-padres h2 {
+    font-size: 16px;
+    color: var(--violet);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-family: var(--mono);
   }
 
-  /* ===== LOADING / ERROR ===== */
+  .panel-padres p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .btn-firma {
+    background: var(--violet-dim);
+    color: var(--violet);
+    border: 1px solid rgba(124, 92, 255, 0.4);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: var(--display);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-firma:hover:not(:disabled) {
+    background: rgba(124, 92, 255, 0.2);
+    border-color: rgba(124, 92, 255, 0.7);
+  }
+
+  .btn-firma:disabled {
+    background: var(--border-dim);
+    color: var(--text-dim);
+    border-color: transparent;
+    cursor: not-allowed;
+  }
+
+  .error-card {
+    background: rgba(255,80,80,0.06);
+    border: 1px solid rgba(255,80,80,0.2);
+    border-radius: 12px;
+    padding: 28px;
+  }
+
   #cargando {
-    grid-column: 1 / -1;
     text-align: center;
     padding: 60px 20px;
     color: var(--text-muted);
@@ -456,42 +489,9 @@
     letter-spacing: 0.1em;
   }
 
-  .error-card {
-    grid-column: 1 / -1;
-    background: rgba(255,80,80,0.06);
-    border: 1px solid rgba(255,80,80,0.2);
-    border-radius: 12px;
-    padding: 28px;
-  }
-
-  .error-card h2 {
-    font-size: 16px;
-    color: #FF5050;
-    margin-bottom: 12px;
-  }
-
-  .error-card p, .error-card code {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-
-  .error-card code {
-    font-family: var(--mono);
-    color: var(--text-dim);
-  }
-
   @media (max-width: 640px) {
-    header {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto auto;
-    }
-    .ring-wrap {
-      grid-column: 1;
-      grid-row: 2;
-      flex-direction: row;
-      justify-content: flex-start;
-    }
+    header { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
+    .ring-wrap { grid-column: 1; grid-row: 2; flex-direction: row; justify-content: flex-start; }
     .stat-bar { grid-row: 3; }
   }
 </style>
@@ -500,9 +500,9 @@
 
 <header>
   <div class="header-text">
-    <p class="header-eyebrow">Sistema de aprendizaje — Verano 2025</p>
+    <p class="header-eyebrow">Cronograma de 90 Minutos — Verano 2026</p>
     <h1>Panel de <span>Sebastián</span></h1>
-    <p class="header-sub">Preparando 6.º de Primaria · 10 módulos activos</p>
+    <p class="header-sub">Preparando 6.º de Primaria · Bloqueo Diario Activo</p>
   </div>
 
   <div class="ring-wrap">
@@ -526,64 +526,42 @@
     <div class="stat-divider"></div>
     <div class="stat">
       <span class="stat-value cyan" id="statCompletados">0/10</span>
-      <span class="stat-label">Módulos</span>
+      <span class="stat-label">Días Listos</span>
     </div>
     <div class="stat-divider"></div>
     <div class="stat">
       <span class="stat-value violet" id="statPorcentaje">0%</span>
-      <span class="stat-label">Progreso</span>
+      <span class="stat-label">Progreso Global</span>
     </div>
   </div>
 </header>
 
 <main id="app">
-  <p id="cargando">Iniciando sistema...</p>
+  <p id="cargando">Cargando cronograma diario...</p>
 </main>
 
 <script>
-const TOTAL_MODULOS = 10;
-const PUNTOS_POR_RESPUESTA = 10;
+let diaActual = Number(localStorage.getItem("seb_dia_actual")) || 1;
+// Local state for current day sub-fases
+let resueltasDia = JSON.parse(localStorage.getItem(`seb_fases_dia_${diaActual}`) || '{"lectura":false,"estudio":false,"practica":false,"proyecto":false}');
 
-let puntos = Number(localStorage.getItem("puntosSebastian")) || 0;
-let resueltas = new Set(JSON.parse(localStorage.getItem("resueltasSebastian") || "[]"));
+function actualizarGlobalUI(totalDias) {
+  const completados = diaActual - 1;
+  const puntosTotales = completados * 100; // 100 puntos por día completo aprobado
+  const pct = Math.round((completados / totalDias) * 100);
 
-function actualizarUI() {
-  const completados = resueltas.size;
-  const maxPuntos = TOTAL_MODULOS * PUNTOS_POR_RESPUESTA;
-  const pct = Math.round((puntos / maxPuntos) * 100);
-
-  // Animated counter
-  animarContador(document.getElementById("puntosDisplay"), puntos);
-  animarContador(document.getElementById("statPuntos"), puntos);
-
-  document.getElementById("statCompletados").textContent = completados + "/" + TOTAL_MODULOS;
+  document.getElementById("puntosDisplay").textContent = puntosTotales;
+  document.getElementById("statPuntos").textContent = puntosTotales;
+  document.getElementById("statCompletados").textContent = completados + "/" + totalDias;
   document.getElementById("statPorcentaje").textContent = pct + "%";
 
-  // Ring
   const circunferencia = 376;
-  const offset = circunferencia - (circunferencia * Math.min(puntos / maxPuntos, 1));
+  const offset = circunferencia - (circunferencia * Math.min(completados / totalDias, 1));
   document.getElementById("ringProgress").style.strokeDashoffset = offset;
 }
 
-let contadorAnimFrame = null;
-function animarContador(el, objetivo) {
-  const inicio = parseInt(el.textContent) || 0;
-  if (inicio === objetivo) return;
-  const duracion = 600;
-  const startTime = performance.now();
-  function step(now) {
-    const t = Math.min((now - startTime) / duracion, 1);
-    const ease = t < 0.5 ? 2*t*t : -1+(4-2*t)*t;
-    el.textContent = Math.round(inicio + (objetivo - inicio) * ease);
-    el.classList.add("animating");
-    if (t < 1) requestAnimationFrame(step);
-    else { el.textContent = objetivo; el.classList.remove("animating"); }
-  }
-  requestAnimationFrame(step);
-}
-
 function normalizar(texto) {
-  return texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().replace(/\s+/g, " ");
+  return texto.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").trim().replace(/\s+/g, " ");
 }
 
 function escapeHTML(texto) {
@@ -595,125 +573,168 @@ function escapeHTML(texto) {
 if (window.location.protocol === "file:") {
   document.getElementById("app").innerHTML = `
     <div class="error-card">
-      <h2>⚠ Acceso directo detectado</h2>
-      <p>El navegador bloquea la carga de <code>tareas.json</code> cuando abres el archivo con doble clic.</p>
-      <p>Usa un servidor local: <code>python3 -m http.server</code> y visita <code>http://localhost:8000</code>, o publica en GitHub Pages.</p>
+      <h2>⚠ Servidor Local Requerido</h2>
+      <p>El navegador bloquea las solicitudes locales. Levanta un servidor con: <code>python3 -m http.server</code> en esta carpeta.</p>
     </div>
   `;
 } else {
-
   fetch("tareas.json")
     .then(res => {
-      if (!res.ok) throw new Error("Respuesta del servidor: " + res.status);
+      if (!res.ok) throw new Error("HTTP " + res.status);
       return res.json();
     })
     .then(data => {
       const app = document.getElementById("app");
       app.innerHTML = "";
 
-      data.asignaturas.forEach((asig, idx) => {
-        const yaResuelta = resueltas.has(asig.id);
-        const card = document.createElement("article");
-        card.className = "module" + (yaResuelta ? " completado" : "");
-        card.dataset.id = asig.id;
+      const diaData = data.dias.find(d => d.numero === diaActual);
 
-        const modNum = String(idx + 1).padStart(2, "0");
+      if (!diaData) {
+        app.innerHTML = `<div class='module' style='text-align:center; padding:40px;'><h2 style='color:var(--cyan); margin-bottom:10px;'>¡Completado! 🎉</h2><p class='section-text'>Sebastián ha finalizado con éxito los 10 días del plan de preparación para 6.º de Primaria.</p></div>`;
+        actualizarGlobalUI(data.dias.length);
+        return;
+      }
+
+      actualizarGlobalUI(data.dias.length);
+
+      // Create title
+      const h2 = document.createElement("h2");
+      h2.id = "dia-cabecera-titulo";
+      h2.textContent = diaData.titulo;
+      app.appendChild(h2);
+
+      // Grid container for subfases
+      const grid = document.createElement("div");
+      grid.className = "grid-bloques";
+      app.appendChild(grid);
+
+      // 4 Fases layout mapping
+      const fasesClaves = ["lectura", "estudio", "practica", "proyecto"];
+      const iconos = { lectura: "📖", estudio: "🧠", practica: "✏️", proyecto: "🚀" };
+      const etiquetas = { lectura: "15 MIN — LECTURA", estudio: "30 MIN — ESTUDIO", practica: "30 MIN — PRÁCTICA", proyecto: "15 MIN — MINI PROYECTO" };
+
+      fasesClaves.forEach((faseKey) => {
+        const fase = diaData.fases[faseKey];
+        const completada = resueltasDia[faseKey];
+        const card = document.createElement("article");
+        card.className = "module" + (completada ? " completado" : "");
+        card.id = `card-${faseKey}`;
+
+        let interactiveElement = "";
+        if (faseKey === "lectura" || faseKey === "proyecto") {
+          interactiveElement = `<button class="btn-responder" id="btn-${faseKey}" ${completada ? "disabled" : ""}>${completada ? "✓ Confirmado" : "Marcar como hecho"}</button>`;
+        } else {
+          interactiveElement = `<button class="btn-responder" id="btn-${faseKey}" ${completada ? "disabled" : ""}>${completada ? "✓ Resuelto" : "Validar Respuesta"}</button>`;
+        }
 
         card.innerHTML = `
           <div class="module-head">
-            <div class="module-icon-wrap" aria-hidden="true">${escapeHTML(asig.icono)}</div>
+            <div class="module-icon-wrap">${iconos[faseKey]}</div>
             <div class="module-title-group">
-              <p class="module-id">MOD-${modNum}</p>
-              <p class="module-name">${escapeHTML(asig.nombre)}</p>
+              <p class="module-id">${etiquetas[faseKey]}</p>
+              <p class="module-name">${escapeHTML(fase.titulo)}</p>
             </div>
-            <span class="module-status ${yaResuelta ? "status-done" : "status-pending"}">
-              ${yaResuelta ? "OK" : "pendiente"}
+            <span class="module-status ${completada ? "status-done" : "status-pending"}" id="status-${faseKey}">
+              ${completada ? "OK" : "PENDIENTE"}
             </span>
           </div>
-
           <div class="module-progress-bar">
-            <div class="module-progress-fill" style="width: ${yaResuelta ? "100%" : "0%"}"></div>
+            <div class="module-progress-fill" id="fill-${faseKey}" style="width: ${completada ? "100%" : "0%"}"></div>
           </div>
-
-          <div class="module-section">
-            <p class="section-label">Pregunta</p>
-            <p class="section-text">${escapeHTML(asig.pregunta)}</p>
+          <div>
+            <span class="section-label">Instrucciones</span>
+            <p class="section-text">${escapeHTML(fase.descripcion)}</p>
           </div>
-
-          <div class="module-section">
-            <p class="section-label violet">Tarea offline</p>
-            <p class="section-text">${escapeHTML(asig.tarea)}</p>
-          </div>
-
-          <div class="module-section">
-            <p class="section-label amber">Mini proyecto</p>
-            <p class="section-text">${escapeHTML(asig.proyecto)}</p>
-          </div>
-
-          <button class="btn-responder" data-id="${escapeHTML(asig.id)}" ${yaResuelta ? "disabled" : ""}>
-            ${yaResuelta ? "✓ Módulo completado" : "Responder pregunta"}
-          </button>
+          ${interactiveElement}
         `;
+        grid.appendChild(card);
 
-        app.appendChild(card);
+        // Event listener selection
+        const btn = card.querySelector(`#btn-${faseKey}`);
+        btn.addEventListener("click", () => {
+          if (faseKey === "lectura" || faseKey === "proyecto") {
+            completarFaseFija(faseKey);
+          } else {
+            validarFaseInteractiva(faseKey, fase.respuesta);
+          }
+        });
       });
 
-      actualizarUI();
+      // Render Parents Approval section
+      const panel = document.createElement("section");
+      panel.className = "panel-padres";
+      panel.innerHTML = `
+        <h2>🔒 Panel de Verificación Parental</h2>
+        <p>Una vez que Sebastián complete las 4 fases de hoy (digitales y en su cuaderno físico), introduzca la clave para guardar el progreso y desbloquear el día siguiente.</p>
+        <button class="btn-firma" id="btnFirmaPadres" disabled>✍️ Firmar y Abrir Siguiente Día</button>
+      `;
+      app.appendChild(panel);
 
-      app.addEventListener("click", (e) => {
-        const btn = e.target.closest("button[data-id]");
-        if (!btn || btn.disabled) return;
-        const id = btn.dataset.id;
-        const asig = data.asignaturas.find(a => a.id === id);
-        if (asig) resolver(btn, asig);
+      comprobarEstadoFirma();
+
+      function completarFaseFija(key) {
+        resueltasDia[key] = true;
+        guardarEstadoLocal();
+        actualizarCardVisual(key);
+        comprobarEstadoFirma();
+      }
+
+      function validarFaseInteractiva(key, respuestaCorrecta) {
+        const respuestaUser = prompt("Introduce la respuesta exacta obtenida:");
+        if (respuestaUser === null) return;
+        if (normalizar(respuestaUser).includes(normalizar(respuestaCorrecta))) {
+          alert("¡Correcto! Fase completada.");
+          resueltasDia[key] = true;
+          guardarEstadoLocal();
+          actualizarCardVisual(key);
+          comprobarEstadoFirma();
+        } else {
+          alert("Casi... Revisa el cuaderno e inténtalo de nuevo.");
+        }
+      }
+
+      function guardarEstadoLocal() {
+        localStorage.setItem(`seb_fases_dia_${diaActual}`, JSON.stringify(resueltasDia));
+      }
+
+      function actualizarCardVisual(key) {
+        const card = document.getElementById(`card-${key}`);
+        card.classList.add("completado");
+        document.getElementById(`status-${key}`).className = "module-status status-done";
+        document.getElementById(`status-${key}`).textContent = "OK";
+        document.getElementById(`fill-${key}`).style.width = "100%";
+        document.getElementById(`btn-${key}`).disabled = true;
+        document.getElementById(`btn-${key}`).textContent = (key === "lectura" || key === "proyecto") ? "✓ Confirmado" : "✓ Resuelto";
+      }
+
+      function comprobarEstadoFirma() {
+        const todoListo = fasesClaves.every(k => resueltasDia[k] === true);
+        const btnFirma = document.getElementById("btnFirmaPadres");
+        if (todoListo) {
+          btnFirma.disabled = false;
+        }
+      }
+
+      document.getElementById("btnFirmaPadres").addEventListener("click", () => {
+        const clave = prompt("Padres: Introduzcan la palabra clave para verificar y firmar (Clave: aprobado):");
+        if (clave && normalizar(clave) === "aprobado") {
+          alert("¡Día firmado! Guardando registros en el sistema.");
+          localStorage.setItem(`seb_dia_${diaActual}_completado`, "true");
+          
+          diaActual += 1;
+          localStorage.setItem("seb_dia_actual", diaActual);
+          
+          window.location.reload();
+        } else {
+          alert("Clave incorrecta. Firma pendiente.");
+        }
       });
+
     })
     .catch(err => {
       console.error(err);
-      document.getElementById("app").innerHTML = `
-        <div class="error-card">
-          <h2>⚠ Error al cargar contenidos</h2>
-          <p>No se pudo leer <code>tareas.json</code>. Revisa la consola (F12).</p>
-          <p><code>${escapeHTML(err.message)}</code></p>
-        </div>
-      `;
+      document.getElementById("app").innerHTML = `<div class="error-card"><h2>⚠ Error cargando estructura</h2><p>${escapeHTML(err.message)}</p></div>`;
     });
-
-  function resolver(btn, asig) {
-    const respuesta = prompt("Escribe tu respuesta:");
-    if (respuesta === null) return;
-
-    const correcta = normalizar(respuesta).includes(normalizar(asig.respuesta));
-
-    if (correcta) {
-      alert("¡Correcto! +10 puntos");
-      puntos += PUNTOS_POR_RESPUESTA;
-      localStorage.setItem("puntosSebastian", puntos);
-
-      resueltas.add(asig.id);
-      localStorage.setItem("resueltasSebastian", JSON.stringify([...resueltas]));
-
-      // Update button
-      btn.disabled = true;
-      btn.textContent = "✓ Módulo completado";
-
-      // Update card
-      const card = btn.closest(".module");
-      card.classList.add("completado");
-      card.querySelector(".module-status").className = "module-status status-done";
-      card.querySelector(".module-status").textContent = "OK";
-      card.querySelector(".module-icon-wrap").style.background = "rgba(0,229,255,0.18)";
-      card.querySelector(".module-icon-wrap").style.borderColor = "rgba(0,229,255,0.3)";
-
-      // Animate bar
-      const bar = card.querySelector(".module-progress-fill");
-      requestAnimationFrame(() => { bar.style.width = "100%"; });
-
-      actualizarUI();
-    } else {
-      alert("Casi... revisa y vuelve a intentarlo.");
-    }
-  }
 }
 </script>
 
