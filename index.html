@@ -21,7 +21,9 @@ Progreso:
 </header>
 
 
-<main id="app"></main>
+<main id="app">
+<p id="cargando">Cargando contenidos...</p>
+</main>
 
 
 <script>
@@ -29,79 +31,154 @@ Progreso:
 let puntos = Number(localStorage.getItem("puntosSebastian")) || 0;
 document.getElementById("puntos").innerHTML = puntos;
 
+// Bug fix #1: avisar si la página se abrió con doble clic (protocolo file://)
+// En ese caso fetch() falla siempre por CORS, así que detectamos el caso
+// y mostramos un mensaje claro en vez de dejar la página en blanco.
+if (window.location.protocol === "file:") {
+  document.getElementById("app").innerHTML = `
+    <section>
+      <h2>⚠️ No se pueden cargar los contenidos</h2>
+      <p>Estás abriendo el archivo directamente (doble clic), y el navegador
+      bloquea la carga de <code>tareas.json</code> por seguridad.</p>
+      <p>Para que funcione, abre esta carpeta con un servidor local
+      (por ejemplo <code>python3 -m http.server</code> y visita
+      <code>http://localhost:8000</code>) o publícalo en GitHub Pages.</p>
+    </section>
+  `;
+} else {
+
+// Set para recordar qué preguntas ya se respondieron correctamente
+// (bug fix #5: evita sumar puntos varias veces por la misma pregunta)
+let resueltas = new Set(JSON.parse(localStorage.getItem("resueltasSebastian") || "[]"));
+
+// Bug fix #4: normaliza texto (minúsculas, sin tildes, sin espacios extra)
+// para que la validación de respuestas no sea ni demasiado estricta ni
+// demasiado laxa con cosas como tildes o mayúsculas.
+function normalizar(texto) {
+  return texto
+    .toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .trim()
+    .replace(/\s+/g, " ");
+}
+
+// Bug fix #3: helper para insertar texto como texto, no como HTML,
+// evitando que comillas o etiquetas en el JSON rompan la página.
+function escapeHTML(texto) {
+  const div = document.createElement("div");
+  div.textContent = texto;
+  return div.innerHTML;
+}
+
 fetch("tareas.json")
-.then(res => res.json())
+.then(res => {
+  if (!res.ok) {
+    throw new Error("Respuesta no válida del servidor: " + res.status);
+  }
+  return res.json();
+})
 .then(data => {
 
-const app=document.getElementById("app");
+  const app = document.getElementById("app");
+  app.innerHTML = "";
+
+  data.asignaturas.forEach(asignatura => {
+
+    let bloque = document.createElement("section");
+    bloque.dataset.id = asignatura.id;
+
+    const yaResuelta = resueltas.has(asignatura.id);
+
+    bloque.innerHTML = `
+
+      <h2>${escapeHTML(asignatura.icono)} ${escapeHTML(asignatura.nombre)}</h2>
+
+      <h3>🧠 Pregunta rápida</h3>
+
+      <p>${escapeHTML(asignatura.pregunta)}</p>
+
+      <button data-id="${escapeHTML(asignatura.id)}" ${yaResuelta ? "disabled" : ""}>
+        ${yaResuelta ? "✅ Ya respondida" : "Responder"}
+      </button>
 
 
-data.asignaturas.forEach(asignatura=>{
+      <h3>📚 Tarea offline</h3>
+
+      <p>${escapeHTML(asignatura.tarea)}</p>
 
 
-let bloque=document.createElement("section");
+      <h3>🚀 Mini proyecto</h3>
+
+      <p>${escapeHTML(asignatura.proyecto)}</p>
 
 
-bloque.innerHTML=`
+      <hr>
 
-<h2>${asignatura.icono} ${asignatura.nombre}</h2>
+    `;
 
-<h3>🧠 Pregunta rápida</h3>
+    app.appendChild(bloque);
 
-<p>${asignatura.pregunta}</p>
+  });
 
-<button onclick="resolver(this,'${asignatura.respuesta}')">
-Responder
-</button>
+  // Bug fix #2: un solo listener delegado en vez de onclick inline,
+  // así también evitamos problemas de escapado de comillas en el HTML.
+  app.addEventListener("click", (evento) => {
+    const btn = evento.target.closest("button[data-id]");
+    if (!btn || btn.disabled) return;
 
+    const id = btn.dataset.id;
+    const asignatura = data.asignaturas.find(a => a.id === id);
+    if (!asignatura) return;
 
-<h3>📚 Tarea offline</h3>
+    resolver(btn, asignatura);
+  });
 
-<p>${asignatura.tarea}</p>
-
-
-<h3>🚀 Mini proyecto</h3>
-
-<p>${asignatura.proyecto}</p>
-
-
-<hr>
-
-`;
-
-app.appendChild(bloque);
-
-
+})
+.catch(error => {
+  // Bug fix #2: si falla el fetch (red, JSON corrupto, etc.) el usuario
+  // ve un mensaje claro en vez de una página vacía sin explicación.
+  console.error("Error al cargar tareas.json:", error);
+  document.getElementById("app").innerHTML = `
+    <section>
+      <h2>⚠️ No se pudieron cargar los contenidos</h2>
+      <p>Hubo un problema leyendo <code>tareas.json</code>.
+      Revisa la consola del navegador (F12) para más detalles.</p>
+      <p style="color:#999">${escapeHTML(error.message)}</p>
+    </section>
+  `;
 });
 
 
-});
+function resolver(btn, asignatura) {
 
+  let contestacion = prompt("Escribe tu respuesta:");
+  if (contestacion === null) return; // canceló el prompt
 
-function resolver(btn,respuesta){
+  const correcta = normalizar(contestacion).includes(normalizar(asignatura.respuesta));
 
-let contestacion=prompt("Escribe tu respuesta:");
+  if (correcta) {
 
-if(contestacion &&
-contestacion.toLowerCase().includes(respuesta.toLowerCase())){
+    alert("¡Correcto! +10 puntos 🎉");
 
-alert("¡Correcto! +10 puntos 🎉");
+    puntos += 10;
+    document.getElementById("puntos").innerHTML = puntos;
+    localStorage.setItem("puntosSebastian", puntos);
 
-puntos+=10;
+    resueltas.add(asignatura.id);
+    localStorage.setItem("resueltasSebastian", JSON.stringify([...resueltas]));
 
-document.getElementById("puntos").innerHTML=puntos;
+    btn.disabled = true;
+    btn.textContent = "✅ Ya respondida";
 
-localStorage.setItem("puntosSebastian", puntos);
+  } else {
 
+    alert("Casi... revisa la respuesta y vuelve a intentarlo 🙂");
 
-}else{
-
-alert("Casi... revisa la respuesta y vuelve a intentarlo 🙂");
+  }
 
 }
 
-}
-
+} // cierre del else (protocolo distinto de file:)
 
 </script>
 

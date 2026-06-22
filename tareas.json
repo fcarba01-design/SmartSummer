@@ -5,6 +5,7 @@
 
 {
 
+"id":"natural-science",
 "nombre":"Natural Science",
 "icono":"🔬",
 
@@ -25,6 +26,7 @@
 
 {
 
+"id":"ciencias-sociales",
 "nombre":"Ciencias Sociales",
 "icono":"🌍",
 
@@ -45,6 +47,7 @@
 
 {
 
+"id":"lengua-castellana",
 "nombre":"Lengua castellana y literatura",
 "icono":"📖",
 
@@ -65,6 +68,7 @@
 
 {
 
+"id":"matematicas-abn",
 "nombre":"Matemáticas ABN",
 "icono":"➗",
 
@@ -85,6 +89,7 @@
 
 {
 
+"id":"lengua-inglesa",
 "nombre":"Lengua Inglesa",
 "icono":"🇬🇧",
 
@@ -105,6 +110,7 @@
 
 {
 
+"id":"music",
 "nombre":"Music",
 "icono":"🎵",
 
@@ -125,6 +131,7 @@
 
 {
 
+"id":"art-and-crafts",
 "nombre":"Art and Crafts",
 "icono":"🎨",
 
@@ -145,6 +152,7 @@
 
 {
 
+"id":"educacion-fisica",
 "nombre":"Educación Física",
 "icono":"⚽",
 
@@ -165,6 +173,7 @@
 
 {
 
+"id":"tecnologia-robotica",
 "nombre":"Tecnología y Robótica",
 "icono":"🤖",
 
@@ -185,6 +194,7 @@
 
 {
 
+"id":"religion-catolica",
 "nombre":"Religión Católica",
 "icono":"✝️",
 
